@@ -1,1 +1,68 @@
-html, y'alla
+<!doctype html>
+<html lang=en>
+<head>
+    <style type="text/css">
+        body {
+            font-family: helveticaneue, sans-serif;
+            background-color: black;
+            color: white;
+        }
+
+        h1.header {
+            font-size: 122px;
+            text-align: center;
+            margin: 260px auto 0 auto;
+        }
+
+        .main {
+            line-height: 160%;
+            font-size: 12px;
+            font-weight: bold;
+            width: 230px;
+            margin: 0 auto;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+
+        span.pink {
+            color: #ff1493;
+        }
+
+        span.orange {
+            color: orange;
+        }
+    </style>
+    <meta charset=utf-8>
+    <title>npz</title>
+
+    <script type="text/javascript">
+        function fixEmail() {
+            var mailElem,
+                link,
+                oldString,
+                newString;
+
+            mailElem = document.getElementById('mejl');
+            oldString = mailElem.innerText;
+            newString = oldString.replace(' [snabela] ', '@').replace(' [punkt] ', '.');
+            link = document.createElement('a');
+            link.setAttribute('href', 'mailto:' + newString);
+            link.innerText = newString;
+            mailElem.innerText = '';
+            mailElem.appendChild(link);
+        }
+    </script>
+</head>
+<body onload="fixEmail();">
+<h1 class="header">NP<span class="orange">Z</span></h1>
+<div class="main">
+    <b>Mobile Development Agency</b><br />
+    Uppsala, Sweden<br />
+    0706 91 06 96<br />
+    <span id="mejl">hello [snabela] npz [punkt] se</span>
+</div>
+</body>
+</html>
