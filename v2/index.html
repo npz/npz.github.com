@@ -1,30 +1,76 @@
 <!doctype html>
 <html lang=en>
 <head>
+    <title>NPZ - mobile development agency</title>
+    <meta content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, target-densitydpi=device-dpi" name="viewport">
     <style type="text/css">
 
+        html, body, div, span, applet, object, iframe,
+        h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+        a, abbr, acronym, address, big, cite, code,
+        del, dfn, em, img, ins, kbd, q, s, samp,
+        small, strike, strong, sub, sup, tt, var,
+        b, u, i, center,
+        dl, dt, dd, ol, ul, li,
+        fieldset, form, label, legend,
+        table, caption, tbody, tfoot, thead, tr, th, td,
+        article, aside, canvas, details, embed,
+        figure, figcaption, footer, header, hgroup,
+        menu, nav, output, ruby, section, summary,
+        time, mark, audio, video {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            font: inherit;
+            vertical-align: baseline;
+        }
+
         body {
+            line-height: 1;
             font-family: 'Helvetica Neue', Arial, sans-serif;
             background-color: #eee;
             color: #222;
         }
 
-        h1.header {
-            font-size: 122px;
-            text-align: center;
-            margin: 0 auto;
+        img.header {
+            display: block;
+            margin: 20px auto;
         }
 
         .main {
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
             line-height: 160%;
-            font-size: 12px;
-            // font-weight: bold;
-            width: 230px;
+            font-size: 16px;
+            width: 290px;
             margin: 0 auto;
             padding: 15px;
 
             background-color: #fff;
+        }
+
+        p {
+            margin: 1em 0;
+        }
+
+        h1, h2, h3 {
+            font-weight: bold;
+        }
+        h2 {
+            font-size: 26px;
+        }
+
+        h3 {
+            font-size: 20px;
+        }
+
+        h2, h3 {
+            margin-top: 1.5em;
+            margin-bottom: 0.8em;
+        }
+
+        h2:first-child {
+            margin-top: 0.8em;;
         }
 
         a {
@@ -48,13 +94,11 @@
     <title>npz</title>
 
     <script type="text/javascript">
-        function fixEmail() {
-            var mailElem,
-                link,
+        function fixEmail(mailElem) {
+            var link,
                 oldString,
                 newString;
 
-            mailElem = document.getElementById('mejl');
             oldString = mailElem.innerText;
             newString = oldString.replace(' [snabela] ', '@').replace(' [punkt] ', '.');
             link = document.createElement('a');
@@ -63,45 +107,47 @@
             mailElem.innerText = '';
             mailElem.appendChild(link);
         }
+
+        function fixThemEmails() {
+            var emailElems,
+                i;
+
+            emailElems = document.getElementsByClassName('mejl');
+
+            for (i = 0; i < emailElems.length; i++) {
+                fixEmail(emailElems[i]);
+            }
+        }
     </script>
 </head>
-<body onload="fixEmail();">
-<h1 class="header">NP<span class="pink">Z</span></h1>
+<body onload="fixThemEmails();">
+<img class="header" width="290" height="86" src="logo.png" alt="NPZ logo"/>
 <div class="main">
+    <h2>About Us</h2>
     <p>
-        <h2>About Us</h2>
-        We are a mobile development agency based in Uppsala, Sweden.
+        NPZ is a mobile development agency based in Uppsala, Sweden.
     </p>
     <p>
-        We develop native apps in iOS and cross-platform apps in PhoneGap.
+        We develop native apps for iOS, Android and cross-platform apps through PhoneGap.
     </p>
     <p>
         We are a certified partner of
         <a href="http://www.appflycloud.com/">Appfly Cloud</a>.
     </p>
-    <p>
-        <h2>Reach Us</h2>
-    </p>
-    <p>
-        <h3>G&ouml;ran</h3>
-        <div>
-            <a href="tel:0706 91 06 96">0706 91 06 96</a><br />
-            <span class="mejl">goran [snabela] npz [punkt] se</span>
-        </div>
-        <img style="width: 100%;" src="goran_cv.jpg" alt="Göran" /><br />
-    </p>
-    <p>
-        <h3>Emilio</h3>
-        <div>
-            <a href="tel:0768 40 21 36">0768 40 21 36</a><br />
-            <span class="mejl">emilio [snabela] npz [punkt] se</span>
-        </div>
-        <img style="width: 100%;" src="emilio_cv.jpg" alt="Göran" /><br />
-    </p>
-    <p>
-        <h3>Get In Touch!</h3>
-        <span id="mejl">hello [snabela] npz [punkt] se</span>
-    </p>
+    <h2>We Are NPZ</h2>
+    <p>This is us, your friendly neighbourhood app agency.</p>
+    <h3>G&ouml;ran</h3>
+    <a href="tel:0706 91 06 96">0706 91 06 96</a><br />
+    <span class="mejl">goran [snabela] npz [punkt] se</span>
+    <img style="width: 100%;" src="goran_cv.jpg" alt="G&ouml;ran" /><br />
+
+    <h3>Emilio</h3>
+    <a href="tel:0768 40 21 36">0768 40 21 36</a><br />
+    <span class="mejl">emilio [snabela] npz [punkt] se</span>
+    <img style="width: 100%;" src="emilio_cv.jpg" alt="Emilio" /><br />
+
+    <h3>Get In Touch!</h3>
+    We love when nice people send us email at <span class="mejl">hello [snabela] npz [punkt] se</span>.
 </div>
 </body>
 </html>
