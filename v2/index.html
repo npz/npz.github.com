@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang=en>
+<head>
+    <title>NPZ - Mobilutvecklingsbyrå i Uppsala</title>
+    <meta content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, target-densitydpi=device-dpi" name="viewport">
+    <style type="text/css">
+
+        html, body, div, span, applet, object, iframe,
+        h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+        a, abbr, acronym, address, big, cite, code,
+        del, dfn, em, img, ins, kbd, q, s, samp,
+        small, strike, strong, sub, sup, tt, var,
+        b, u, i, center,
+        dl, dt, dd, ol, ul, li,
+        fieldset, form, label, legend,
+        table, caption, tbody, tfoot, thead, tr, th, td,
+        article, aside, canvas, details, embed,
+        figure, figcaption, footer, header, hgroup,
+        menu, nav, output, ruby, section, summary,
+        time, mark, audio, video {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            font: inherit;
+            vertical-align: baseline;
+        }
+
+        body {
+            line-height: 1;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: #eee;
+            color: #222;
+        }
+
+        img.header {
+            display: block;
+            margin: 20px auto;
+        }
+
+        .main {
+            letter-spacing: 0.5px;
+            line-height: 160%;
+            font-size: 16px;
+            width: 290px;
+            margin: 0 auto;
+            padding: 15px;
+
+            background-color: #fff;
+        }
+
+        p {
+            margin: 1em 0;
+        }
+
+        h1, h2, h3 {
+            font-weight: bold;
+        }
+        h2 {
+            font-size: 26px;
+        }
+
+        h3 {
+            font-size: 20px;
+        }
+
+        h2, h3 {
+            margin-top: 1.5em;
+            margin-bottom: 0.8em;
+        }
+
+        h2:first-child {
+            margin-top: 0.8em;;
+        }
+
+        a {
+            text-decoration: none;
+            color: #ff1493;
+        }
+
+        span.pink {
+            color: #ff1493;
+        }
+
+        span.orange {
+            color: #ffbb00;
+        }
+
+        img {
+            margin: 15px auto;
+        }
+    </style>
+    <meta charset=utf-8>
+
+    <script type="text/javascript">
+        function fixEmail(mailElem) {
+            var link,
+                oldString,
+                newString;
+
+            oldString = mailElem.innerText;
+            newString = oldString.replace(' [snabela] ', '@').replace(' [punkt] ', '.');
+            link = document.createElement('a');
+            link.setAttribute('href', 'mailto:' + newString);
+            link.innerText = newString;
+            mailElem.innerText = '';
+            mailElem.appendChild(link);
+        }
+
+        function fixThemEmails() {
+            var emailElems,
+                i;
+
+            emailElems = document.getElementsByClassName('mejl');
+
+            for (i = 0; i < emailElems.length; i++) {
+                fixEmail(emailElems[i]);
+            }
+        }
+    </script>
+</head>
+<body onload="fixThemEmails();">
+<img class="header" width="290" height="86" src="logo.png" alt="NPZ logo"/>
+<div class="main">
+    <h2>Om oss</h2>
+    <p>
+        NPZ är en uppsalabaserad utvecklingsbyrå som för tillfället fokuserar
+        på utvecklandet av mobilapplikationer.
+    </p>
+    <p>
+        Vi utvecklar för iOS, Android och plattformsoberoende via PhoneGap.
+    </p>
+    <p>
+        Vi är en certifierad samarbetspartner med
+        <a href="http://www.appflycloud.com/">Appfly Cloud</a>.
+    </p>
+    <h2>Vi är NPZ</h2>
+    <p>Det här är vi, det personliga valet.</p>
+    <h3>G&ouml;ran</h3>
+    <a href="tel:0706 91 06 96">0706 91 06 96</a><br />
+    <span class="mejl">goran [snabela] npz [punkt] se</span>
+    <img style="width: 100%;" src="goran.png" alt="G&ouml;ran" /><br />
+
+    <h3>Emilio</h3>
+    <a href="tel:0768 40 21 36">0768 40 21 36</a><br />
+    <span class="mejl">emilio [snabela] npz [punkt] se</span>
+    <img style="width: 100%;" src="emilio.png" alt="Emilio" /><br />
+
+    <h3>Hör av dig!</h3>
+    Det är alltid kul när någon skickar mail till
+    <span class="mejl">hello [snabela] npz [punkt] se</span>.
+</div>
+</body>
+</html>
