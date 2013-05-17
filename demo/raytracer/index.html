@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang=en>
+    <head>
+    <meta charset=utf-8>
+    <title>blah</title>
+    <style>
+
+    </style>
+    <script type="text/javascript" src="util.js"></script>
+    <script type="text/javascript" src="vector.js"></script>
+    <script type="text/javascript" src="camera.js"></script>
+    <script type="text/javascript" src="ray.js"></script>
+    <script type="text/javascript" src="shape.js"></script>
+    <script type="text/javascript" src="sphere.js"></script>
+    <script type="text/javascript" src="plane.js"></script>
+    <script type="text/javascript" src="light.js"></script>
+    <script type="text/javascript" src="intersection.js"></script>
+    <script type="text/javascript" src="world.js"></script>
+    <script type="text/javascript" src="trace.js"></script>
+    <script type="text/javascript" src="render.js"></script>
+    <script type="text/javascript" src="canvasDisplay.js"></script>
+</head>
+<body>
+<input id="horizontal" type="range" min="0" max="30" onchange="horizontalChange();">
+<canvas id="screen" width="512" height="512"></canvas>
+
+
+<script type="text/javascript">
+    var horizontal = document.getElementById('horizontal'),
+        locked = false,
+        currentValue = -1,
+        controller = {abort: false};
+
+    horizontal.onchange = horizontalChange;
+    horizontal.onmousedown = function () {
+        console.log('aborting enhanced view');
+        controller.abort = true;
+    }
+
+    horizontal.onmouseup = function () {
+        console.log('enhancing view');
+        controller.abort = false;
+        incRender(RT.camera, 4, 2, controller, function () {
+            console.log('done enhancing view');
+        });
+    }
+
+    function horizontalChange() {
+        var length,
+            value,
+            angle,
+            x,
+            z;
+
+        controller.abort = true;
+
+        if (!locked) {
+            locked = true;
+            value = parseInt(document.getElementById('horizontal').value, 10);
+            currentValue = value;
+            angle = 2 * Math.PI * value / 30;
+
+            length = 6;
+            x = length * Math.cos(angle);
+            z = length * Math.sin(angle);
+            RT.camera.pos = Vector(5 + x, 2, 1.0 + z);
+            RT.camera.update();
+            incRender(RT.camera, 32, 8, null, function () {
+                locked = false;
+
+                value = parseInt(document.getElementById('horizontal').value, 10);
+                if (value !== currentValue) {
+                    horizontalChange();
+                }
+
+            });
+        }
+    }
+
+    RT.camera.pos = Vector(-1.0, 2.0, 1.0);
+    RT.camera.lookAt = Vector(5, 2, 0);
+    RT.camera.sky = Vector(0, 1, 0);
+    RT.camera.width = 3;
+    RT.camera.height = 3;
+    RT.camera.angle = Math.PI / 2.5;
+    RT.camera.update();
+    RT.world.lights[0].pos = RT.camera.pos;
+
+    horizontalChange();
+
+//    incRender(RT.camera, 32,1);
+//    render(4, RT.camera, null, function (matrix, width, pixelsPerRay) {
+//        displayOnCanvas(matrix, width, pixelsPerRay);
+//    });
+
+
+
+    //startIncTrace(-1.1, 2.0, 1, 1);
+    /*setTimeout(function() {
+        startIncTrace(-1.1, 3.5, 1, 8);
+    }, 3500);
+    setTimeout(function() {
+        startIncTrace(-1.1, 3.5, 2, 8);
+    }, 8000);*/
+    //controller.abort = true;
+</script>
+</body>
+</html>
