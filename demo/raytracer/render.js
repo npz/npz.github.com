@@ -43,10 +43,8 @@ function renderWithWorker(camera, pixelsPerRay, controller, done) {
 
     worker.addEventListener('message', function (e) {
         var pixels = JSON.parse(e.data);
-        displayOnCanvas(pixels, 512 / pixelsPerRay, pixelsPerRay);
 
         if (!(controller && controller.abort)) {
-            displayOnCanvas(pixels, 512 / pixelsPerRay, pixelsPerRay);
             done(pixels);
         }
     });

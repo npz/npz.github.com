@@ -26,23 +26,26 @@
 
 
 <script type="text/javascript">
+    // Here goes ugly demo code. For prettier looking code, look in any other file.
+
     var horizontal = document.getElementById('horizontal'),
         locked = false,
-        currentValue = -1,
-        controller = {abort: false};
+        currentValue = -1;
 
     horizontal.onchange = horizontalChange;
-    horizontal.onmousedown = function () {
-        console.log('aborting enhanced view');
-        controller.abort = true;
-    }
 
     horizontal.onmouseup = function () {
         console.log('enhancing view');
-        controller.abort = false;
-        incRender(RT.camera, 4, 2, controller, function () {
+        var controller = {
+            abort: false
+        };
+        incRender(RT.camera, 4, 1, controller, function () {
             console.log('done enhancing view');
         });
+
+        horizontal.onmousedown = function () {
+            controller.abort = true;
+        }
     }
 
     function horizontalChange() {
@@ -51,8 +54,6 @@
             angle,
             x,
             z;
-
-        controller.abort = true;
 
         if (!locked) {
             locked = true;
@@ -63,7 +64,7 @@
             length = 6;
             x = length * Math.cos(angle);
             z = length * Math.sin(angle);
-            RT.camera.pos = Vector(5 + x, 2, 1.0 + z);
+            RT.camera.pos = Vector(5 + x, 4, 1.0 + z);
             RT.camera.update();
             incRender(RT.camera, 32, 8, null, function () {
                 locked = false;
@@ -87,22 +88,6 @@
     RT.world.lights[0].pos = RT.camera.pos;
 
     horizontalChange();
-
-//    incRender(RT.camera, 32,1);
-//    render(4, RT.camera, null, function (matrix, width, pixelsPerRay) {
-//        displayOnCanvas(matrix, width, pixelsPerRay);
-//    });
-
-
-
-    //startIncTrace(-1.1, 2.0, 1, 1);
-    /*setTimeout(function() {
-        startIncTrace(-1.1, 3.5, 1, 8);
-    }, 3500);
-    setTimeout(function() {
-        startIncTrace(-1.1, 3.5, 2, 8);
-    }, 8000);*/
-    //controller.abort = true;
 </script>
 </body>
 </html>

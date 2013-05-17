@@ -124,7 +124,8 @@ RT.intersection = {
         var d,
             normal,
             pos,
-            t;
+            t,
+            col;
 
         d = V.dotProduct(ray.dir, plane.normal);
         if (d === 0) {
@@ -139,6 +140,10 @@ RT.intersection = {
             plane.normal :
             V.scalarMultiplication(plane.normal, -1);
 
-        return Intersection(pos, t, ray, normal, plane.colour, plane.material, plane.id);
+
+        // horrible chess hack goes here:
+        col = chessHack(pos.x, pos.z);
+
+        return Intersection(pos, t, ray, normal, col, plane.material, plane.id);
     }
 }

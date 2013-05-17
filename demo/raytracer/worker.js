@@ -24,7 +24,7 @@ self.addEventListener('message', function(e) {
     camera = Camera();
     camera.fromCopy(obj.camera);
 
-    RT.world.addLight(Light(camera.pos.copy(), 0.5));
+    RT.world.addLight(Light(camera.pos.copy(), 0.75));
     render(obj.pixelsPerRay, camera, null, function (matrix) {
         self.postMessage(JSON.stringify(matrix));
     });

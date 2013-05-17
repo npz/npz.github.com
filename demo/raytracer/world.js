@@ -29,9 +29,9 @@ RT.world = (function () {
 }());
 
 RT.world.setAmbient(0.2);
-RT.world.addShapes(Sphere(Vector(5, 1, 1.1), 1, 0.8, 0.5, 0.0, 0.8, 0.35, 0.5));
-RT.world.addShapes(Sphere(Vector(5, 1, -1.7), 1, 0.4, 0.1, 0.1, 1.0, 0.35, 0.5));
-RT.world.addShapes(Sphere(Vector(7, 1.7, 0), 1.7, 0.5, 0.2, 0.0, 1.0, 0.35, 0.5));
-RT.world.addShapes(Sphere(Vector(3, 0.3, 0), 0.3, 0.9, 0.2, 0.0, 0.8, 0.35, 0.5));
+RT.world.addShapes(Sphere(Vector(5, 1, 1.1), 1, 1.0, 0.2, 0.6, 0.8, 0.25, 0.5));
+RT.world.addShapes(Sphere(Vector(5, 1.2, -1.7), 1.2, 0.7, 0.3, 0.0, 1.0, 0.25, 0.5));
+RT.world.addShapes(Sphere(Vector(7, 0.9, 0), 0.9, 0.5, 0.2, 0.7, 1.0, 0.25, 0.5));
+RT.world.addShapes(Sphere(Vector(3, 0.7, 0), 0.7, 0.9, 0.2, 0.0, 0.8, 0.25, 0.5));
 RT.world.addShapes(Plane(Vector(0, 0, 0), Vector(0, 1, 0), 0, 0, 0, 1, 0.5, 0));
-RT.world.addLight(Light(Vector(4, 11, 0), 0.6));
+RT.world.addLight(Light(Vector(5, 8, 0), 1.1));
