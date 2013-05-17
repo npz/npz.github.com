@@ -44,6 +44,7 @@
         });
 
         horizontal.onmousedown = function () {
+            console.log('abort');
             controller.abort = true;
         }
     }
@@ -88,6 +89,7 @@
     RT.world.lights[0].pos = RT.camera.pos;
 
     horizontalChange();
+    horizontal.onmouseup();
 </script>
 </body>
 </html>
