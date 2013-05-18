@@ -62,7 +62,7 @@
             currentValue = value;
             angle = 2 * Math.PI * value / 30;
 
-            length = 6;
+            length = 4.5;
             x = length * Math.cos(angle);
             z = length * Math.sin(angle);
             RT.camera.pos = Vector(5 + x, 4, 1.0 + z);
@@ -80,7 +80,7 @@
     }
 
     RT.camera.pos = Vector(-1.0, 2.0, 1.0);
-    RT.camera.lookAt = Vector(5, 2, 0);
+    RT.camera.lookAt = Vector(5, 0, 0);
     RT.camera.sky = Vector(0, 1, 0);
     RT.camera.width = 3;
     RT.camera.height = 3;
