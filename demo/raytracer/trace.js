@@ -22,7 +22,7 @@ function shade(intersection, reflections) {
 
         // determine if light source is blocked or not.
         shadowed = false;
-        for (j = 10; j < RT.world.shapes.length && !shadowed; j += 1) {
+        for (j = 0; j < RT.world.shapes.length && !shadowed; j += 1) {
             if (j !== intersection.id) {
 
                 shape = RT.world.shapes[j];
