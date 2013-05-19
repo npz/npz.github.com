@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang=en>
+    <head>
+    <meta charset=utf-8>
+    <title>blah</title>
+    <style>
+
+    </style>
+    <script type="text/javascript" src="util.js"></script>
+    <script type="text/javascript" src="vector.js"></script>
+    <script type="text/javascript" src="camera.js"></script>
+    <script type="text/javascript" src="ray.js"></script>
+    <script type="text/javascript" src="shape.js"></script>
+    <script type="text/javascript" src="sphere.js"></script>
+    <script type="text/javascript" src="plane.js"></script>
+    <script type="text/javascript" src="light.js"></script>
+    <script type="text/javascript" src="intersection.js"></script>
+    <script type="text/javascript" src="world.js"></script>
+    <script type="text/javascript" src="trace.js"></script>
+    <script type="text/javascript" src="render.js"></script>
+    <script type="text/javascript" src="canvasDisplay.js"></script>
+</head>
+<body>
+<input id="horizontal" type="range" min="0" max="30" onchange="horizontalChange();">
+<canvas id="screen" width="512" height="512"></canvas>
+
+
+<script type="text/javascript">
+    // Here goes ugly demo code. For prettier looking code, look in any other file.
+
+    var horizontal = document.getElementById('horizontal'),
+        locked = false,
+        currentValue = -1;
+
+    horizontal.onchange = horizontalChange;
+
+    horizontal.onmouseup = function () {
+        console.log('enhancing view');
+        var controller = {
+            abort: false
+        };
+        incRender(RT.camera, 4, 1, controller, function () {
+            console.log('done enhancing view');
+        });
+
+        horizontal.onmousedown = function () {
+            console.log('abort');
+            controller.abort = true;
+        }
+    }
+
+    function horizontalChange() {
+        var length,
+            value,
+            angle,
+            x,
+            z;
+
+        if (!locked) {
+            locked = true;
+            value = parseInt(document.getElementById('horizontal').value, 10);
+            currentValue = value;
+            angle = 2 * Math.PI * value / 30;
+
+            length = 4.5;
+            x = length * Math.cos(angle);
+            z = length * Math.sin(angle);
+            RT.camera.pos = Vector(5 + x, 4, 1.0 + z);
+            RT.camera.update();
+            incRender(RT.camera, 32, 8, null, function () {
+                locked = false;
+
+                value = parseInt(document.getElementById('horizontal').value, 10);
+                if (value !== currentValue) {
+                    horizontalChange();
+                }
+
+            });
+        }
+    }
+
+    RT.camera.pos = Vector(-1.0, 2.0, 1.0);
+    RT.camera.lookAt = Vector(5, 0, 0);
+    RT.camera.sky = Vector(0, 1, 0);
+    RT.camera.width = 3;
+    RT.camera.height = 3;
+    RT.camera.angle = Math.PI / 2.5;
+    RT.camera.update();
+    RT.world.lights[0].pos = RT.camera.pos;
+
+    horizontalChange();
+    horizontal.onmouseup();
+</script>
+</body>
+</html>
