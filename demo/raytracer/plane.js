@@ -3,7 +3,7 @@ function chessHack(x, z) {
     z = Math.round(z);
 
     if ((x + z) % 2 === 0) {
-        return Colour(0.2, 0.2, 0.2);
+        return Colour(0.3, 0.3, 0.3);
     } else {
         return Colour(0, 0, 0);
     }
