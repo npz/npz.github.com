@@ -99,12 +99,12 @@
                 oldString,
                 newString;
 
-            oldString = mailElem.innerText;
+            oldString = mailElem.innerHTML;
             newString = oldString.replace(' [snabela] ', '@').replace(' [punkt] ', '.');
             link = document.createElement('a');
             link.setAttribute('href', 'mailto:' + newString);
-            link.innerText = newString;
-            mailElem.innerText = '';
+            link.innerHTML = newString;
+            mailElem.innerHTML = '';
             mailElem.appendChild(link);
         }
 
@@ -113,14 +113,13 @@
                 i;
 
             emailElems = document.getElementsByClassName('mejl');
-
             for (i = 0; i < emailElems.length; i++) {
                 fixEmail(emailElems[i]);
             }
         }
     </script>
 </head>
-<body onload="fixThemEmails();">
+<body>
 <img class="header" width="290" height="86" src="logo.png" alt="NPZ logo"/>
 <div class="main">
     <h2>About Us</h2>
@@ -148,6 +147,9 @@
 
     <h3>Get In Touch!</h3>
     We love when nice people send us email at <span class="mejl">hello [snabela] npz [punkt] se</span>.
+    <script type="text/javascript">
+        fixThemEmails();
+    </script>
 </div>
 </body>
 </html>
