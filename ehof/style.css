@@ -1,0 +1,223 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* ============ RESET DONE ============ */
+
+body {
+    background-color: #ff1493;
+    background-color: #cccccc;
+    font-family: Arial, sans-serif;
+}
+
+#header,
+#menu,
+#body,
+#footer {
+    margin: 0 auto;
+    width: 980px;
+    position: relative;
+}
+
+#menu>li>a, .flag_text>h1 {
+    font-size: 24px;
+    font-family: 'Exo', sans-serif;
+    color: #efefef;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-size: 20px;
+    color: #666699;
+    font-weight: bold;
+    padding: 2px 0;
+}
+
+body p {
+    font-size: 14px;
+    line-height: 1.3em;
+}
+
+#header_wrapper {
+    background-color: orange;
+    background-color: #666699;
+}
+
+#header {
+    height: 102px;
+}
+
+#logo {
+    position: absolute;
+    top: -2px;
+}
+
+#menu_wrapper {
+    background-color: #ff8c00;
+    background-color: #3f3f68;
+}
+
+#menu {
+    display: block;
+    font-size: 0;
+}
+
+#menu>li {
+    margin-left: 20px;
+    padding: 12px 8px;
+    font-size: 16px;
+    display: inline-block;
+}
+
+#menu>li:first-child {
+    margin-left: 210px;
+}
+
+#menu>li>a {
+    text-decoration: none;
+}
+
+#body {
+    font-size: 0;
+    margin: 30px auto;
+}
+
+#body>* {
+    font-size: 16px;
+    vertical-align: top;
+}
+
+#main,
+#contact {
+    -webkit-box-shadow: 0px 2px 10px rgba(50, 50, 50, 0.5);
+    -moz-box-shadow:    0px 2px 10px rgba(50, 50, 50, 0.5);
+    box-shadow:         0px 2px 10px rgba(50, 50, 50, 0.5);
+}
+
+#main_content {
+    padding: 15px 35px;
+}
+
+#contact_content {
+    padding: 15px 15px;
+}
+
+#main {
+    margin-left: 40px;
+    width: 600px;
+    background-color: white;
+    display: inline-block;
+}
+
+#main p,
+#contact p {
+    margin-bottom: 20px;
+}
+
+#main a {
+    text-decoration: none;
+    color: #666699;
+}
+
+#factory_img {
+    margin: 30px 0;
+}
+
+#contact {
+    margin-left: 50px;
+    display: inline-block;
+    right: 0px;
+    width: 280px;
+    background-color: white;
+    display: inline-block;
+}
+
+#contact h2 {
+    margin-top: 25px;
+}
+
+#contact h2:first-child {
+    margin-top: 0;
+}
+
+#map_img {
+    display: block;
+    margin: 0 auto 20px auto;
+}
+
+.flag {
+    font-size: 0;
+    height: 41px;
+    margin-left: -25px;
+}
+
+.flag>* {
+    display: inline-block;
+    height: 41px;
+}
+
+.flag_gfx {
+    background: url("ribbonarrow.png");
+    width: 25px;
+}
+
+.flag_text {
+    margin-left: -2px;
+    vertical-align: top;
+    padding: 0 25px 0 40px;
+    background-color: #666699;
+}
+
+.flag_text>h1 {
+    font-size: 22px;
+    line-height: 44px;
+}
+
+#footer {
+    margin-top: 20px;
+    font-family: 'Exo', sans-serif;
+    color: #888;
+    font-size: 14px;
+    text-align: right;
+}
+
