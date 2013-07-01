@@ -151,7 +151,7 @@ body p {
 
 #main p,
 #contact p {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 #main a {
@@ -173,7 +173,7 @@ body p {
 }
 
 #contact h2 {
-    margin-top: 25px;
+    margin-top: 20px;
 }
 
 #contact h2:first-child {
