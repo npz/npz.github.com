@@ -30,6 +30,7 @@
         </div>
         <div id="main_content">
             <p>Hej och välkommen till Ehof Grafiska ABs hemsida!</p>
+<?php echo $_SERVER['QUERY_STRING']; ?>
 
             <p>Vi är ett personligt företag baserat i Uppsala som fokuserar på
             alla sorters trycksaker, så som affischer, restaurangmenyer,
