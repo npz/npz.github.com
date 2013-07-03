@@ -107,6 +107,7 @@ body p {
 #menu>li {
     margin-left: 20px;
     font-size: 16px;
+    padding: 12px 8px;
     display: inline-block;
 }
 
@@ -293,6 +294,7 @@ body p {
     #menu>li {
         margin: 0;
         display: block;
+        padding: 0;
         text-align: center;
     }
 
