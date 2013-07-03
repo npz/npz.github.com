@@ -61,7 +61,7 @@ body {
 
 #menu>li>a, .flag_text>h1 {
     font-size: 24px;
-    font-family: 'Exo', sans-serif;
+    font-family: 'Noto Sans', sans-serif;
     color: #efefef;
     text-transform: uppercase;
 }
@@ -160,6 +160,8 @@ body p {
 }
 
 #factory_img {
+    max-width: 428px;
+    max-height: 214px;
     margin: 30px 0;
 }
 
@@ -186,23 +188,26 @@ body p {
 }
 
 .flag {
+    position: relative;
     font-size: 0;
     height: 41px;
     margin-left: -25px;
 }
 
 .flag>* {
-    display: inline-block;
     height: 41px;
 }
 
 .flag_gfx {
-    background: url("ribbonarrow.png");
+    position: absolute;
+    background: url("ribbonarrow2.png");
+    background-size: 25px 41px;
     width: 25px;
 }
 
 .flag_text {
-    margin-left: -2px;
+    display: inline-block;
+    margin-left: 23px;
     vertical-align: top;
     padding: 0 25px 0 40px;
     background-color: #666699;
@@ -210,14 +215,99 @@ body p {
 
 .flag_text>h1 {
     font-size: 22px;
-    line-height: 44px;
+    line-height: 41px;
 }
 
 #footer {
     margin-top: 20px;
-    font-family: 'Exo', sans-serif;
+    font-family: 'Noto Sans', sans-serif;
     color: #888;
     font-size: 14px;
     text-align: right;
 }
 
+#footer_content>div {
+    display: inline-block;
+}
+
+#footer_content {
+    margin-right: 30px;
+}
+
+#footer a {
+    color: #888;
+}
+
+@media screen and (max-width: 960px) {
+    #header,
+    #menu,
+    #body,
+    #footer {
+        margin: 0 auto;
+        width: 100%;
+        position: relative;
+    }
+
+    #menu>li>a, .flag_text>h1 {
+        font-size: 20px;
+    }
+
+    #main {
+        width: 60%;
+        margin: 30px 2% 0 2%;
+    }
+
+    #contact {
+        width: 30%;
+        margin: 30px 2% 0 2%;
+    }
+
+    #factory_img {
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    #header,
+    #menu,
+    #body,
+    #footer {
+        margin: 0 auto;
+        width: 100%;
+        position: relative;
+    }
+
+    #header {
+        height: 190px;
+    }
+
+    #logo {
+        margin-left: -98px;
+        left: 50%;
+    }
+
+    #menu>li {
+        margin: 0;
+        display: block;
+        text-align: center;
+    }
+
+    #menu>li>a {
+        display: block;
+    }
+
+    #menu>li:first-child {
+        margin: 0;
+    }
+
+    #main,
+    #contact,
+    #footer {
+        width: 92%;
+        margin: 30px 4% 0 4%;
+    }
+
+    #footer_content {
+        margin-right: 0;
+    }
+}
