@@ -89,6 +89,8 @@ body p {
 
 #logo {
     position: absolute;
+    width: 196px;
+    height: 176px;
     top: -2px;
 }
 
@@ -104,7 +106,6 @@ body p {
 
 #menu>li {
     margin-left: 20px;
-    padding: 12px 8px;
     font-size: 16px;
     display: inline-block;
 }
@@ -114,6 +115,7 @@ body p {
 }
 
 #menu>li>a {
+    padding: 12px 8px;
     text-decoration: none;
 }
 
@@ -278,11 +280,13 @@ body p {
     }
 
     #header {
-        height: 190px;
+        height: 150px;
     }
 
     #logo {
-        margin-left: -98px;
+        width: 157px;
+        height: 141px;
+        margin-left: -74px;
         left: 50%;
     }
 
@@ -293,6 +297,7 @@ body p {
     }
 
     #menu>li>a {
+        padding: 8px 8px;
         display: block;
     }
 
